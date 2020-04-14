@@ -1,0 +1,300 @@
+body {
+  box-sizing: border-box;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+.logo {
+  margin: 10px;
+}
+.container-box {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+.container {
+  position: relative;
+
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  opacity: 0.95;
+  width: 600px;
+}
+.wrapper h2 {
+  width: 100%;
+  text-align: center;
+  background: #f88e11;
+  margin: 0;
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
+}
+input {
+  height: 30px;
+  border: 1px solid gray;
+}
+li {
+  padding: 10px 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.plates {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-direction: column;
+  margin: 0;
+}
+h2 {
+  margin-bottom: 0;
+}
+.add-items {
+  padding: 20px;
+  height: auto;
+}
+label {
+  padding: 0 20px;
+}
+.buttons {
+  display: flex;
+  padding: 5x;
+}
+.buttons input {
+  margin: 8px;
+}
+.trash {
+  margin-left: auto;
+  height: 30px;
+  font-size: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: solid 1px #f3a737;
+  background: rgb(242, 162, 44);
+}
+.checkbox-label {
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 24px;
+  height: 24px;
+  clear: both;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox-label .checkbox-custom {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+  border: 2px solid #e2e2e2;
+}
+
+.checkbox-label input:checked ~ .checkbox-custom {
+  background-color: #f3a737;
+  border-radius: 5px;
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  border: 2px solid #f3a737;
+}
+
+.checkbox-label input:checked + label {
+  text-decoration: line-through;
+}
+
+.checkbox-label .checkbox-custom::after {
+  position: absolute;
+  content: "";
+  left: 12px;
+  top: 12px;
+  height: 0px;
+  width: 0px;
+  border-radius: 5px;
+  border: solid #ffffff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(0deg) scale(0);
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::after {
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+  left: 8px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+.add-items {
+  position: relative;
+  margin-bottom: 25px;
+  text-align: center;
+}
+#add-item:focus {
+  outline: none;
+  border-bottom: transparent;
+}
+#add-item {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 250px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  transition: 0.2s ease all;
+}
+.add-items label {
+  color: #999;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  top: 20px;
+  transition: 0.2s ease all;
+}
+#add-item:focus ~ label,
+#add-item:valid ~ label {
+  top: -15px;
+  font-size: 14px;
+  color: #f47a20;
+  border-bottom: transparent;
+}
+.bar {
+  position: relative;
+  display: block;
+  width: 250px;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #f2a22c;
+  transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+#add-item:focus ~ .bar:before,
+#add-item:focus ~ .bar:after {
+  width: 50%;
+}
+
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#add-item:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: f2a22c;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: f2a22c;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: f2a22c;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+.buttonAddNew {
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: solid 1px #da7c0c;
+  background: rgb(242, 162, 44);
+  margin-top: 30px;
+}
+
+.buttonAddNew:focus {
+  outline: none;
+  border-bottom: transparent;
+}
+
+.buttonAddNew:hover,
+.trash:hover {
+  background: #f47c20;
+  background: linear, left top, left bottom, from(#f88e11), to(#f06015);
+  background: top, #f88e11, #f06015;
+}
+.buttonAddNew:active,
+.trash:active {
+  color: #fff;
+  background: linear, left top, left bottom, from(#f47a20), to(#faa51a);
+  background: top, #f47a20, #faa51a;
+  top: 1px;
+  position: relative;
+}
+.buttons .buttonAddNew {
+  height: 30px;
+  font-size: 12px;
+}
+.fas.fa-shopping-cart {
+  margin-left: 10px;
+}

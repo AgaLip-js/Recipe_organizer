@@ -1,0 +1,30 @@
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background: #f2a22c;
+}
+.footer_info {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 0;
+  color: white;
+}
+.footer_info > li {
+  text-align: center;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid transparent;
+  transition: background 0.2s;
+  border-radius: 5px;
+}
+.footer_info li:hover {
+  background: #f47c20;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  position: relative;
+}

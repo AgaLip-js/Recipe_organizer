@@ -1,0 +1,158 @@
+main {
+  min-height: calc(100% - 50px);
+}
+.main_panel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 32px;
+  margin: 0 50px;
+}
+.card {
+  grid-auto-rows: 350px 50px;
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  transition: all 0.4s linear;
+}
+.recipes_table {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.recipe_card {
+  position: relative;
+  width: 100%;
+  grid-row-start: 2;
+  transition: all 0.4s linear;
+  text-align: center;
+  z-index: 11;
+  height: 100%;
+  background: white;
+}
+
+.recipe_img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.4s linear;
+  object-fit: cover;
+  object-position: center;
+}
+
+.recipe_title {
+  position: relative;
+  z-index: 11;
+  font-size: 16px;
+}
+.data {
+  position: absolute;
+  font-size: 14px;
+  z-index: 3;
+  letter-spacing: 2px;
+  margin-left: 100%;
+  opacity: 0;
+  margin-top: 10px;
+  transition: all 0.3s linear;
+}
+.like {
+  position: absolute;
+  font-size: 22px;
+  z-index: 1;
+  color: rgb(242, 162, 44);
+  opacity: 0;
+  margin: 10px;
+  transition: all 0.3s linear;
+}
+.like:hover {
+  content: "fas fa-heart";
+  color: black;
+  cursor: pointer;
+}
+.data::before {
+  padding-right: 5px;
+}
+.info_table {
+  display: flex;
+  justify-content: space-around;
+}
+
+.open_table {
+  transition: all 0.4s linear;
+  z-index: 11;
+  position: relative;
+  width: 100%;
+  opacity: 1;
+  background: white;
+  margin-top: 15px;
+}
+.recipe_img:hover {
+  opacity: 0.5;
+}
+
+.clock,
+.ingredients,
+.portion {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  width: fit-content;
+  font-size: 12px;
+}
+.account {
+  grid-column: 1/3;
+  grid-row-start: 2;
+}
+.value {
+  color: rgb(242, 162, 44);
+  font-size: 16px;
+  font-weight: bold;
+}
+p {
+  margin: 0;
+}
+.see_recipe {
+  text-align: center;
+  display: inline-block;
+  background: rgb(242, 162, 44);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border: solid 1px #da7c0c;
+  padding: 0.45em 1em;
+  margin: 15px;
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  font-size: 16px;
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+.see_recipe:hover {
+  transform: translateY(-3px);
+  background: #f47c20;
+  background: linear, left top, left bottom, from(#f88e11), to(#f06015);
+  background: top, #f88e11, #f06015;
+}
+
+.card:hover .recipe_card {
+  transform: translateY(-100px);
+}
+.card:hover {
+  box-shadow: 0 0 88px 0 rgba(0, 0, 0, 0.1607843137254902);
+}
+.card:hover .recipe_img {
+  opacity: 0.5;
+}
+.card:hover .data {
+  transform: translateX(-100%);
+  opacity: 1;
+  z-index: 5;
+  transition: all 0.3s linear;
+}
+.card:hover .like {
+  opacity: 1;
+  z-index: 2;
+  transition: opacity 0.3s linear;
+}

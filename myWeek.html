@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link href="./node_modules/@fullcalendar/core/main.css" rel="stylesheet" />
+    <link
+      href="./node_modules/@fullcalendar/daygrid/main.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="myWeek.css" />
+
+    <title>Mój tydzień</title>
+    <script src="./node_modules/@fullcalendar/core/main.js"></script>
+    <script src="./node_modules/@fullcalendar/core/locales/pl.js"></script>
+    <script src="./node_modules/@fullcalendar/daygrid/main.js"></script>
+    <script src="./packages/interaction//main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var calendarEl = document.getElementById("calendar");
+        var Draggable = FullCalendarInteraction.Draggable;
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          plugins: ["dayGrid", "interaction"],
+          header: {
+            right: "prev,next",
+          },
+          navLinks: true,
+          editable: true,
+          droppable: true,
+          defaultView: "dayGridWeek",
+          locale: "pl",
+          events: [
+            {
+              id: "a",
+              title: "my event",
+              start: "2020-04-13",
+            },
+          ],
+          eventDragStop: function (e) {
+            let trashEl = document.getElementById("fcTrash");
+
+            let x1 = trashEl.offsetLeft;
+            let x2 = trashEl.offsetLeft + trashEl.offsetWidth;
+            let y1 = trashEl.offsetTop;
+            let y2 = trashEl.offsetTop + trashEl.offsetHeight;
+
+            if (
+              e.jsEvent.pageX >= x1 &&
+              e.jsEvent.pageX <= x2 &&
+              e.jsEvent.pageY >= y1 &&
+              e.jsEvent.pageY <= y2
+            ) {
+              e.event.remove();
+            }
+          },
+        });
+        var removeTrash = document.createElement("div");
+        removeTrash.setAttribute("id", "fcTrash");
+        var spanTrash = document.createElement("span");
+        spanTrash.setAttribute("class", "fa fa-trash");
+
+        removeTrash.innerHTML = "Usuń przepis";
+        document.body.appendChild(removeTrash);
+        removeTrash.appendChild(spanTrash);
+
+        var myButton = document.createElement("button");
+        myButton.innerHTML = "Dodaj przepis";
+        myButton.setAttribute("id", "addRecipeBtn");
+        document.body.appendChild(myButton);
+
+        let events = JSON.parse(localStorage.getItem("events")) || [];
+
+        myButton.addEventListener("click", function () {
+          let newEvent = {
+            id: "b",
+            title: "myNewEvent",
+            start: "2020-04-13",
+          };
+          events.push(newEvent);
+          console.log(newEvent);
+          calendar.addEvent(newEvent);
+          localStorage.setItem("events", JSON.stringify(events));
+        });
+
+        console.log(events);
+        var event = calendar.getEventById("a");
+        var start = event.start;
+        console.log(start.toISOString());
+        calendar.render();
+      });
+    </script>
+  </head>
+  <body>
+    <a href="./recipe_organizer.html"
+      ><img src="PRZEPISOWNIK.png" width="300px;" class="logo" alt="logo"
+    /></a>
+    <h2 class="myWeekTitle">Mój Tydzień</h2>
+    <div id="calendar"></div>
+  </body>
+</html>

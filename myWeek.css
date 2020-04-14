@@ -1,0 +1,108 @@
+body {
+  font-family: "Lato";
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.logo {
+  margin: 10px;
+}
+#fcTrash {
+  width: 13%;
+  height: 50px;
+  position: relative;
+  background: white;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0 5px;
+  margin-top: 10px;
+}
+
+#calendar {
+  height: 70vh;
+  margin: 0 auto;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+}
+span.fa.fa-trash {
+  font-size: 32px;
+  color: rgb(242, 162, 44);
+}
+.fc-unthemed td.fc-today {
+  background: #eee;
+}
+.fc th {
+  vertical-align: middle;
+  height: 40px;
+  background: #ccc;
+}
+.fc th span {
+  font-size: 20px;
+}
+.myWeekTitle {
+  position: relative;
+  width: fit-content;
+  left: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+.fc-button-primary,
+#addRecipeBtn {
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: solid 1px #da7c0c;
+  background: rgb(242, 162, 44);
+  margin-top: 20px;
+}
+
+.fc-button-primary:disabled,
+.fc-button-primary:disabled:hover {
+  color: #000;
+  background-color: #cccccc;
+  border-color: #ababab;
+}
+
+.fc-button-primary:hover,
+#addRecipeBtn:hover {
+  background: #f47c20;
+  background: linear, left top, left bottom, from(#f88e11), to(#f06015);
+  background: top, #f88e11, #f06015;
+  border: solid 1px #da7c0c;
+}
+.fc-button-primary:active,
+.fc-button-primary:not(:disabled):active,
+.fc-button-primary:not(:disabled).fc-button-active,
+#addRecipeBtn:active {
+  color: #fff;
+  background-color: #f47c20 !important;
+  position: relative;
+  border: solid 1px #da7c0c;
+}
+#addRecipeBtn:focus {
+  outline: none;
+  border-bottom: transparent;
+}
+
+.fc-event,
+.fc-event-dot {
+  background-color: #faa51a;
+  color: white;
+  border: solid 1px #da7c0c;
+}
+.fc-content {
+  border: none;
+}
+.fc-highlight {
+  background-color: #faa51a;
+}

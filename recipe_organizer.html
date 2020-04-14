@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="body.css" />
+    <link rel="stylesheet" type="text/css" href="header.css" />
+    <link rel="stylesheet" type="text/css" href="nav.css" />
+    <link rel="stylesheet" type="text/css" href="carousel.css" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="test.css" />
+    <link rel="stylesheet" type="text/css" href="footer.css" />
+    <link rel="stylesheet" type="text/css" href="addrecipe.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+
+    <title>Przepisownik - organizator smaku</title>
+  </head>
+  <body onload="myFunction()">
+    <header class="header_homePanel">
+      <a href="./recipe_organizer.html"
+        ><img src="PRZEPISOWNIK.png" width="300px;" class="logo" alt="logo"
+      /></a>
+      <div class="search_bar">
+        <input placeholder="Wyszukaj" type="search" class="search" />
+        <button type="submit" class="search_button">
+          <span class="fas fa-search"></span>
+        </button>
+      </div>
+      <div class="account_panel">
+        <button class="log-in">Zaloguj się</button>
+        <button class="create_acc">Załóż konto</button>
+      </div>
+    </header>
+    <nav class="nav_section">
+      <ul class="slidebar_menu">
+        <li class="mini_logo">
+          <a href="#"
+            ><img src="PRZEPISOWNIK_logo.png" width="54px," height="54px"
+          /></a>
+        </li>
+        <li class="slidebar recipe_category">Kategorie przepisów</li>
+        <li class="slidebar myWeek"><a href="./myWeek.html">Mój tydzień</a></li>
+        <li class="slidebar shopping_list">
+          <a href="./myShoppingList.html">Lista zakupów</a>
+        </li>
+        <li class="slidebar add_recipes">Dodaj przepis</li>
+      </ul>
+    </nav>
+    <div class="slider">
+      <div class="carousel">
+        <div id="galleryContainer">
+          <a class="linkTag">
+            <div id="leftView"></div>
+            <p id="leftTitle"></p>
+          </a>
+          <button id="navLeft" class="navBtns">
+            <i class="fas fa-arrow-left fa-3x"></i>
+          </button>
+          <a class="linkTag">
+            <div id="mainView"></div>
+            <p id="mainTitle"></p>
+          </a>
+          <a class="linkTag">
+            <div id="rightView"></div>
+            <p id="rightTitle"></p>
+          </a>
+          <button id="navRight" class="navBtns">
+            <i class="fas fa-arrow-right fa-3x"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="addrecipe" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <p class="modal-title">Dodaj przepis</p>
+          <span class="close-btn fa fa-window-close"></span>
+        </div>
+        <form class="add_recipe-card">
+          <div class="first_column">
+            <div class="group">
+              <input
+                type="text"
+                name="title"
+                id="add_title"
+                required="required"
+              />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label for="add_title" class="control-label"
+                >Tytuł przepisu</label
+              >
+            </div>
+            <div class="add_image">
+              <input
+                type="file"
+                id="file"
+                name="img"
+                accept="image/*"
+                class="inputfile"
+              />
+              <label for="file" id="fileLabel">Wybierz zdjęcie</label>
+              <img
+                class="default_image"
+                src="default-img.jpg"
+                width="350px"
+                height="200px"
+              />
+            </div>
+            <div class="groupLink">
+              <input type="text" name="link-add" id="addLink" placeholder=" " />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label for="addLink" class="control-label">
+                Link do przepisu (opcjonalnie)
+              </label>
+            </div>
+            <div class="group">
+              <input
+                list="datalist_category"
+                type="text"
+                name="category"
+                id="add_category"
+                required="required"
+              />
+              <datalist id="datalist_category">
+                <option value="Dania Główne"></option>
+              </datalist>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label for="add_category" class="control-label"
+                >Stwórz lub wybierz kategorie
+              </label>
+            </div>
+            <div class="recipe_info">
+              <div class="info time">
+                <span class="icon fas fa-clock"> </span>
+                <input
+                  type="number"
+                  min="1"
+                  max="999"
+                  id="preparing_time"
+                  required="required"
+                />
+                <p class="acc">Minuty</p>
+                <p class="title-info">Czas przygotowania</p>
+              </div>
+              <div class="info ingr">
+                <span class="icon fas fa-book-open"></span>
+                <input
+                  type="number"
+                  min="1"
+                  max="99"
+                  id="ingr_account"
+                  required="required"
+                />
+                <p class="acc">Ilość</p>
+                <p class="title-info">Składniki</p>
+              </div>
+              <div class="info port">
+                <span class="icon fas fa-user-friends"></span>
+                <input
+                  type="number"
+                  min="1"
+                  max="99"
+                  id="port_account"
+                  required="required"
+                />
+                <p class="acc">Ilość</p>
+                <p class="title-info">Porcje</p>
+              </div>
+            </div>
+            <div class="add-ingredients">
+              <p>Składniki</p>
+              <ul class="plates">
+                <li>Zawartość składników</li>
+              </ul>
+              <div class="groupIngredients">
+                <input
+                  id="inputType"
+                  class="testClass"
+                  type="text"
+                  name="itemField"
+                  placeholder=" "
+                />
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label for="inputType" class="control-label"
+                  >Nazwa składnika</label
+                >
+                <button type="button" class="buttonAddNew">
+                  Dodaj składnik
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="second_column">
+            <div class="group">
+              <textarea id="text_box" placeholder=" "></textarea>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label for="text_box" class="control-label"
+                >Opis przygotowania</label
+              >
+            </div>
+            <button
+              class="buttonAddNew"
+              id="saveData"
+              type="submit"
+              onclick="submitFn()"
+            >
+              Zatwierdź
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <main class="main_panel">
+      <div class="card">
+        <div class="recipes_table">
+          <p class="data far fa-calendar-alt">06.04.2020</p>
+          <p class="like far fa-heart"></p>
+          <a href="" class="link">
+            <img class="recipe_img" src="recipe7.jpg" />
+          </a>
+        </div>
+        <div class="recipe_card">
+          <h2 class="recipe_title">Przykładowy przepis 1</h2>
+          <div class="open_table">
+            <div class="info_table">
+              <div class="clock">
+                <span class="icon fas fa-clock"> </span>
+                <p class="value">20</p>
+                <p class="account">Minuty</p>
+              </div>
+              <div class="ingredients">
+                <span class="icon fas fa-book-open"></span>
+                <p class="value">5</p>
+                <p class="account">Składniki</p>
+              </div>
+              <div class="portion">
+                <span class="icon fas fa-user-friends"></span>
+                <p class="value">5</p>
+                <p class="account">Porcje</p>
+              </div>
+            </div>
+            <a href="" class="recipe_link"
+              ><button class="see_recipe" type="submit">
+                Zobacz przepis
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="footer">
+      <ul class="footer_info">
+        <li class="contact">Kontakt</li>
+        <li class="about_me">O stronie</li>
+        <li class="book_guest">Księga Gości</li>
+      </ul>
+    </div>
+    <script src="carousel.js"></script>
+    <script src="slidebar.js"></script>
+    <script src="addrecipe.js"></script>
+    <script src="modal.js"></script>
+  </body>
+</html>

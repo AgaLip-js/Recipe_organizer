@@ -1,0 +1,399 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 19;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid black;
+}
+.modal-content {
+  overflow: auto;
+  height: 90vh;
+  background-color: white;
+  margin: auto auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: fit-content;
+  color: black;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  margin-top: 5vh;
+}
+.add_recipe-card {
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  width: 1000px;
+}
+.first_column {
+  grid-column: 1;
+  grid-row: 1;
+  box-shadow: 0 0 10px #ccc;
+  margin: 25px;
+  padding: 10px 15px 10px 10px;
+  vertical-align: top;
+  margin-right: 0;
+}
+.second_column {
+  grid-column: 2;
+  grid-row: 1;
+  box-shadow: 0 0 10px #ccc;
+  margin: 25px;
+  padding: 10px 10px 10px 15px;
+  vertical-align: top;
+  margin-left: 0;
+}
+.modal-header {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: auto auto;
+}
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  grid-row: 2;
+}
+
+.close-btn {
+  color: black;
+  float: right;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  height: fit-content;
+  text-align: end;
+  width: 18px;
+  position: relative;
+  right: calc(-100% + 18px);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: darkgray;
+  text-decoration: none;
+  cursor: pointer;
+}
+.add_image {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+  text-align: center;
+}
+.inputfile + label {
+  cursor: pointer;
+  text-transform: uppercase;
+  height: fit-content;
+  width: fit-content;
+  font-size: 14px;
+  border-radius: 5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: solid 1px #da7c0c;
+  background: rgb(242, 162, 44);
+  display: inline-block;
+  z-index: 10;
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  padding: 5px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background: #f47c20;
+  background: linear, left top, left bottom, from(#f88e11), to(#f06015);
+  background: top, #f88e11, #f06015;
+}
+.inputfile + label {
+  cursor: pointer;
+}
+.default_image {
+  opacity: 0.5;
+}
+.inputfile:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+.inputfile + label * {
+  pointer-events: none;
+}
+
+.recipe_info {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0px;
+}
+.info {
+  display: grid;
+  grid-template-columns: auto 50px auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  width: fit-content;
+  font-size: 12px;
+  column-gap: 5px;
+  text-align: center;
+}
+.acc {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+.title-info {
+  grid-row-start: 1;
+  grid-column: 1/4;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: start;
+  margin-bottom: 10px;
+}
+.info input {
+  color: rgb(242, 162, 44);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #f1f1f1;
+  background: #f6f6f6;
+  border-radius: 15px;
+}
+.ingredients-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-gap: 10px;
+}
+.ingredients-list input {
+  background: #f2f2f2;
+  padding: 10px;
+}
+.add-ingredients {
+  padding-top: 10px;
+}
+.add-ingredients p {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.plates {
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  justify-content: space-around;
+}
+
+.trash {
+  margin-left: 10px;
+  height: 30px;
+  font-size: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: solid 1px #f3a737;
+  background: rgb(242, 162, 44);
+}
+.plates li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+.plates label {
+  font-weight: normal;
+}
+.add-items {
+  margin: 10px 0;
+}
+.group,
+.groupLink,
+.groupIngredients {
+  position: relative;
+  margin-bottom: 25px;
+}
+.groupIngredients button {
+  margin-top: 20px;
+}
+.group input,
+.groupLink input,
+.groupIngredients input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 250px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  transition: 0.2s ease all;
+  margin-top: 25px;
+}
+
+.second_column .group {
+  height: 80%;
+}
+.group textarea {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 400px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  transition: 0.2s ease all;
+  margin-top: 25px;
+  height: 100%;
+  resize: none;
+}
+
+.group input:focus,
+.group textarea:focus,
+.groupLink input:focus,
+.groupIngredients input:focus {
+  outline: none;
+  border-bottom: transparent;
+}
+
+.group label,
+.groupLink label,
+.groupIngredients label {
+  color: #999;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+.group input:focus ~ label,
+.group input:valid ~ label {
+  top: -15px;
+  font-size: 14px;
+  color: #f47a20;
+  border-bottom: transparent;
+}
+
+.groupLink input:not(:placeholder-shown) ~ label,
+.groupLink input:focus ~ label,
+.groupIngredients input:not(:placeholder-shown) ~ label,
+.groupIngredients input:focus ~ label,
+.group textarea:not(:placeholder-shown) ~ label,
+.group textarea:focus ~ label {
+  top: -15px;
+  font-size: 14px;
+  color: #f47a20;
+  border-bottom: transparent;
+}
+
+.add_recipe-card .bar {
+  position: relative;
+  display: block;
+  width: 250px;
+}
+.add_recipe-card .bar:before,
+.add_recipe-card .bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #f2a22c;
+  transition: 0.2s ease all;
+}
+.add_recipe-card .bar:before {
+  left: 50%;
+}
+.add_recipe-card .bar:after {
+  right: 50%;
+}
+
+.add_recipe-card input:focus ~ .bar:before,
+.add_recipe-card input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.add_recipe-card .highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.add_recipe-card input:focus ~ .highlight,
+.add_recipe-card textarea:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: f2a22c;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: f2a22c;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: f2a22c;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+.buttonAddNew {
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 40px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: solid 1px #da7c0c;
+  background: rgb(242, 162, 44);
+  margin-top: 20px;
+}
+
+.buttonAddNew:hover,
+.trash:hover {
+  background: #f47c20;
+  background: linear, left top, left bottom, from(#f88e11), to(#f06015);
+  background: top, #f88e11, #f06015;
+}
+.buttonAddNew:active,
+.trash:active {
+  color: #fff;
+  background: linear, left top, left bottom, from(#f47a20), to(#faa51a);
+  background: top, #f47a20, #faa51a;
+  top: 1px;
+  position: relative;
+}
