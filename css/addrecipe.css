@@ -8,16 +8,16 @@
   height: 100%;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
-  border: 1px solid black;
 }
 .modal-content {
+  width: 1000px;
   overflow: auto;
+  overflow-x: hidden;
   height: 90vh;
   background-color: white;
   margin: auto auto;
   padding: 10px;
   border: 1px solid #888;
-  width: fit-content;
   color: black;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
@@ -27,7 +27,7 @@
   display: grid;
   grid-auto-columns: 1fr 1fr;
   grid-auto-rows: auto;
-  width: 1000px;
+  width: 100%;
 }
 .first_column {
   grid-column: 1;
@@ -37,6 +37,7 @@
   padding: 10px 15px 10px 10px;
   vertical-align: top;
   margin-right: 0;
+  height: 100%;
 }
 .second_column {
   grid-column: 2;
@@ -46,6 +47,7 @@
   padding: 10px 10px 10px 15px;
   vertical-align: top;
   margin-left: 0;
+  height: 100%;
 }
 .modal-header {
   display: grid;
@@ -249,7 +251,7 @@
   font-size: 16px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 400px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid #ccc;
   transition: 0.2s ease all;
@@ -396,4 +398,44 @@
   background: top, #f47a20, #faa51a;
   top: 1px;
   position: relative;
+}
+@media (max-width: 1000px) {
+  .modal-content {
+    width: 100%;
+  }
+
+  .default_image {
+    width: 200px;
+    height: 100px;
+  }
+  .inputfile + label {
+    font-size: 14px;
+    top: 50%;
+    left: 10%;
+    transform: translate(0%, -50%);
+  }
+  .recipe_info {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .add_recipe-card {
+    grid-auto-columns: 1fr;
+    grid-auto-rows: auto auto;
+  }
+  .first_column {
+    grid-column: 1;
+    grid-row: 1;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+  }
+  .second_column {
+    grid-column: 1;
+    grid-row: 2;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+  }
 }

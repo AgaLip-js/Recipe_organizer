@@ -3,6 +3,7 @@ body {
   background-color: #fff;
   margin: 0;
   padding: 0;
+  font-family: "Lato";
 }
 *,
 *:before,
@@ -297,4 +298,26 @@ label {
 }
 .fas.fa-shopping-cart {
   margin-left: 10px;
+}
+
+@media (max-width: 1000px) {
+  .logo {
+    width: 200px;
+  }
+}
+@media (max-width: 750px) and (min-width: 500px) {
+  .wrapper {
+    width: 500px;
+  }
+}
+@media (max-width: 500px) {
+  .wrapper {
+    width: 300px;
+  }
+  .buttonAddNew {
+    width: 150px;
+  }
+  .buttons {
+    flex-direction: column;
+  }
 }

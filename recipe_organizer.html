@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="body.css" />
-    <link rel="stylesheet" type="text/css" href="header.css" />
-    <link rel="stylesheet" type="text/css" href="nav.css" />
-    <link rel="stylesheet" type="text/css" href="carousel.css" />
-    <link rel="stylesheet" type="text/css" href="main.css" />
-    <link rel="stylesheet" type="text/css" href="test.css" />
-    <link rel="stylesheet" type="text/css" href="footer.css" />
-    <link rel="stylesheet" type="text/css" href="addrecipe.css" />
+    <link rel="stylesheet" type="text/css" href="./css/body.css" />
+    <link rel="stylesheet" type="text/css" href="./css/header.css" />
+    <link rel="stylesheet" type="text/css" href="./css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="./css/carousel.css" />
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./css/test.css" />
+    <link rel="stylesheet" type="text/css" href="./css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="./css/addrecipe.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
@@ -31,7 +31,11 @@
   <body onload="myFunction()">
     <header class="header_homePanel">
       <a href="./recipe_organizer.html"
-        ><img src="PRZEPISOWNIK.png" width="300px;" class="logo" alt="logo"
+        ><img
+          src="./pictures/PRZEPISOWNIK.png"
+          width="300px;"
+          class="logo"
+          alt="logo"
       /></a>
       <div class="search_bar">
         <input placeholder="Wyszukaj" type="search" class="search" />
@@ -48,7 +52,10 @@
       <ul class="slidebar_menu">
         <li class="mini_logo">
           <a href="#"
-            ><img src="PRZEPISOWNIK_logo.png" width="54px," height="54px"
+            ><img
+              src="./pictures/PRZEPISOWNIK_logo.png"
+              width="54px,"
+              height="54px"
           /></a>
         </li>
         <li class="slidebar recipe_category">Kategorie przepisów</li>
@@ -115,7 +122,7 @@
               <label for="file" id="fileLabel">Wybierz zdjęcie</label>
               <img
                 class="default_image"
-                src="default-img.jpg"
+                src="./pictures/default-img.jpg"
                 width="350px"
                 height="200px"
               />
@@ -235,7 +242,7 @@
           <p class="data far fa-calendar-alt">06.04.2020</p>
           <p class="like far fa-heart"></p>
           <a href="" class="link">
-            <img class="recipe_img" src="recipe7.jpg" />
+            <img class="recipe_img" src="./pictures/recipe7.jpg" />
           </a>
         </div>
         <div class="recipe_card">
@@ -274,9 +281,9 @@
         <li class="book_guest">Księga Gości</li>
       </ul>
     </div>
-    <script src="carousel.js"></script>
-    <script src="slidebar.js"></script>
-    <script src="addrecipe.js"></script>
-    <script src="modal.js"></script>
+    <script src="./js/carousel.js"></script>
+    <script src="./js/slidebar.js"></script>
+    <script src="./js/addrecipe.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

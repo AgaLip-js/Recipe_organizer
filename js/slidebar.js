@@ -3,7 +3,7 @@ const cont = document.querySelector(".slider");
 const topOfNav = nav.offsetTop;
 
 function fixNav() {
-  if (window.scrollY >= topOfNav) {
+  if (window.scrollY >= topOfNav && window.innerWidth > 500) {
     cont.style.paddingTop = nav.offsetHeight + "px";
     nav.classList.add("fixed-nav");
   } else {

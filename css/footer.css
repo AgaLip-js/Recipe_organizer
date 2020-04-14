@@ -13,6 +13,7 @@
   height: 50px;
   margin-bottom: 0;
   color: white;
+  padding-left: 0;
 }
 .footer_info > li {
   text-align: center;

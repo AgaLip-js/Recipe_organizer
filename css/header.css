@@ -74,3 +74,99 @@
 .logo {
   margin-left: 10px;
 }
+@media (max-width: 1000px) and (min-width: 750px) {
+  .logo {
+    width: 200px;
+  }
+  .log-in,
+  .create_acc {
+    height: 30px;
+  }
+  .search,
+  .search_button {
+    height: 30px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 750px) and (min-width: 500px) {
+  .logo {
+    width: 200px;
+  }
+  .header_homePanel {
+    display: block;
+    margin: 10px 0px 20px;
+  }
+  .search_bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .search {
+    width: 60%;
+  }
+  .account_panel {
+    display: flex;
+    justify-content: center;
+  }
+  .log-in {
+    margin-right: 10px;
+  }
+  .create_acc {
+    margin-left: 10px;
+  }
+  .log-in,
+  .create_acc {
+    height: 30px;
+  }
+  .search,
+  .search_button {
+    height: 30px;
+    font-size: 16px;
+  }
+  .account_panel {
+    padding-right: 0;
+  }
+}
+@media (max-width: 500px) {
+  .logo {
+    width: 200px;
+  }
+  .header_homePanel {
+    display: block;
+    margin: 10px 0px 20px;
+  }
+  .search_bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .search {
+    width: 60%;
+  }
+  .account_panel {
+    display: flex;
+    justify-content: center;
+  }
+  .log-in {
+    margin-right: 10px;
+  }
+  .create_acc {
+    margin-left: 10px;
+  }
+  .log-in,
+  .create_acc {
+    height: 25px;
+  }
+  .search,
+  .search_button {
+    height: 25px;
+    font-size: 16px;
+  }
+  .account_panel {
+    padding-right: 0;
+  }
+}
+  
+  }

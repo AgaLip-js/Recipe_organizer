@@ -1,10 +1,10 @@
 let imgObject = [
-  "recipe1.jpg",
-  "recipe2.jpg",
-  "recipe6.jpg",
-  "recipe4.jpg",
-  "recipe5.jpg",
-  "recipe3.jpg",
+  "./pictures/recipe1.jpg",
+  "./pictures/recipe2.jpg",
+  "./pictures/recipe6.jpg",
+  "./pictures/recipe4.jpg",
+  "./pictures/recipe5.jpg",
+  "./pictures/recipe3.jpg",
 ];
 let titleObj = [
   "Przepis 1",
